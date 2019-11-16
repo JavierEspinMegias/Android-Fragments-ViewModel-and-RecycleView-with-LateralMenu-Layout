@@ -2,19 +2,34 @@ package com.android.lateralmenuexample;
 
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.QuickContactBadge;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.ColorLong;
+import androidx.annotation.LayoutRes;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.lateralmenuexample.ui.home.HomeViewModel;
+
 import java.util.List;
+
+import static android.graphics.Color.*;
 
 
 //Los adaptadores heredan de RecyclerView.Adapter
 public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHolder> {
+
+    private int layoutId;
+    private HomeViewModel viewModel;
+
+    private List<AppUser> users;
+
 
     //En un adaptador es obligatorio definir una clase que herede de RecyclerView.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -31,9 +46,6 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
             this.deleteUser=(Button)itemView.findViewById(R.id.custom_buttom_1);
         }
     }
-
-    //Resto de variables de la clase
-    private List<AppUser> users;
 
     //El constructor deberá enlazar los datos del modelos con los del controlador
     public UserCardAdapter(List<AppUser> mails) {
@@ -62,7 +74,6 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
         //Enlazamos los elementos de la vista con el modelo
         viewHolder.name.setText(user.name);
         viewHolder.id.setText(user.id);
-
         viewHolder.deleteUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,6 +84,7 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
         });
 
     }
+
 
     //Debemos sobrecargar getItemCount que devuelve el número de elementos que habrá en la vista
     //Si estamos utilizando una clase contenedor de Java nos bastará, la mayoría de la veces, con devolver el valor de su método size

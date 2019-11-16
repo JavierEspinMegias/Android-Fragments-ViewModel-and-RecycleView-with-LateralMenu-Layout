@@ -1,6 +1,6 @@
 package com.android.lateralmenuexample;
 
-public class AppUser {
+public class AppUser{
     public String name, id, photo;
     public int age;
 
