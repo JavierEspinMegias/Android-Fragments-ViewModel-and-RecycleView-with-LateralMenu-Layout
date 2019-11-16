@@ -81,6 +81,7 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
         //Enlazamos los elementos de la vista con el modelo
         viewHolder.name.setText(user.name);
         viewHolder.id.setText(user.id);
+        viewHolder.deleteUser.setText("Remove");
         viewHolder.deleteUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,7 +96,6 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
             @Override
             public void onSuccess(Uri uri) {
                 user.setPhoto(uri);
-
                 Glide.with(viewHolder.imageUser.getContext()).load(users.get(position).getPhoto()).into(viewHolder.imageUser);
             }
         });
