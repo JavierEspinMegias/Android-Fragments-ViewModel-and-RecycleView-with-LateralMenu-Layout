@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
@@ -27,6 +29,11 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.android.lateralmenuexample.AppUser;
 import com.android.lateralmenuexample.R;
 import com.android.lateralmenuexample.UserCardAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +48,9 @@ public class HomeFragment extends Fragment {
     private UserCardAdapter adapter;
     private RecyclerView rvUsers;
     private View root;
+    private AppUser user;
+
+    private DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,15 +62,6 @@ public class HomeFragment extends Fragment {
 
         //Contendrá los datos del modelo
         rvUsers = (RecyclerView) root.findViewById(R.id.recyclerViewUsers);
-
-
-        //Creamos el adaptador
-        adapter = new UserCardAdapter(users);
-
-        //Enlazamos la recycler view con su adaptador
-        rvUsers.setAdapter(adapter);
-        //Establecemos el contexto de su layout
-        rvUsers.setLayoutManager(new LinearLayoutManager(root.getContext()));
 
 
         homeViewModel.getText().observe(this, new Observer<String>() {
@@ -84,6 +85,7 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+
 
         return root;
     }

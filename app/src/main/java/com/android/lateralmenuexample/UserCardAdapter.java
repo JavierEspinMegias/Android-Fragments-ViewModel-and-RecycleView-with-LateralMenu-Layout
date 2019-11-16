@@ -4,10 +4,13 @@ package com.android.lateralmenuexample;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,6 +19,10 @@ import androidx.annotation.LayoutRes;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.lateralmenuexample.ui.home.HomeViewModel;
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
@@ -25,11 +32,9 @@ import static android.graphics.Color.*;
 //Los adaptadores heredan de RecyclerView.Adapter
 public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHolder> {
 
-    private int layoutId;
-    private HomeViewModel viewModel;
 
     private List<AppUser> users;
-
+    private StorageReference myStorageRef = FirebaseStorage.getInstance().getReference();
 
     //En un adaptador es obligatorio definir una clase que herede de RecyclerView.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -37,6 +42,7 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
         public TextView name;
         public TextView id;
         public Button deleteUser;
+        public ImageView imageUser;
 
         //Su constructor debera enlazar las variables del controlador con la vista
         public ViewHolder(final View itemView) {
@@ -44,6 +50,7 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
             this.name = (TextView) itemView.findViewById(R.id.user_name);
             this.id = (TextView) itemView.findViewById(R.id.user_id);
             this.deleteUser=(Button)itemView.findViewById(R.id.custom_buttom_1);
+            this.imageUser = (ImageView)itemView.findViewById(R.id.image_user);
         }
     }
 
@@ -82,6 +89,17 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
                 notifyItemRangeChanged(0, users.size());
             }
         });
+
+
+        myStorageRef.child("productos").child(user.getId()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                user.setPhoto(uri);
+
+                Glide.with(viewHolder.imageUser.getContext()).load(users.get(position).getPhoto()).into(viewHolder.imageUser);
+            }
+        });
+
 
     }
 

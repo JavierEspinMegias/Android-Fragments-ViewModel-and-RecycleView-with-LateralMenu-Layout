@@ -16,6 +16,13 @@
     android:id="@+id/layout_custom_card_child">
 
 
+    <ImageView
+        android:id="@+id/image_user"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background" />
+
     <TextView
         android:id="@+id/user_name"
         android:layout_width="wrap_content"
