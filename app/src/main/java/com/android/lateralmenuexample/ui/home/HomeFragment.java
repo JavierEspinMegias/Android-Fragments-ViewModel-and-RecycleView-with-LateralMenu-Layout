@@ -48,8 +48,6 @@ public class HomeFragment extends Fragment {
 
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
 
-
-
         final TextView textView = root.findViewById(R.id.text_home);
 
         //Contendrá los datos del modelo
@@ -86,7 +84,6 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-
 
         return root;
     }
