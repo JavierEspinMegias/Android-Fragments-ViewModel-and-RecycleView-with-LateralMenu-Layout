@@ -1,8 +1,12 @@
 package com.android.lateralmenuexample.ui.home;
 
+import android.content.Context;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -24,43 +28,34 @@ import java.util.List;
 
 public class HomeViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
-    private MutableLiveData<ArrayList<AppUser>> users;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+    private DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
 
+    private MutableLiveData<String> mText = new MutableLiveData<>();
+    private MutableLiveData<ArrayList<AppUser>> users = new MutableLiveData<>();
+
+    private ArrayList<AppUser> localUsers = new ArrayList<>();
 
     public HomeViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
 
+        mText.setValue("This is a fragment with a live data recycler view");
 
-        ArrayList<AppUser> localUsers = new ArrayList<>();
-        // Obtenemos los datos de los usuarios
-        for (int i=0; i<25; i++){
-
-            myRef.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+        myRef.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot pojoUser:dataSnapshot.getChildren()){
+                    AppUser newUser = (AppUser) pojoUser.getValue(AppUser.class);
+                    // Una vez recuperado los agregamos a nuestro Array de Usuarios
+                    localUsers.add(newUser);
                 }
+                // Seteamos nuestra variable LIVEDATA!
+                users.setValue(localUsers);
+            }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                }
-            });
-            // Los hardcodeo porque se deben recuperar de una base de datos
-            AppUser newUser = new AppUser("User_name_"+i,"User_id_"+i,"User_photo"+i,i+18);
-
-            // Una vez recuperado los agregamos a nuestro Array de Usuarios
-            localUsers.add(newUser);
-
-        }
-
-        users = new MutableLiveData<>();
-        users.setValue(localUsers);
-
+            }
+        });
 
     }
     public LiveData<String> getText() {
