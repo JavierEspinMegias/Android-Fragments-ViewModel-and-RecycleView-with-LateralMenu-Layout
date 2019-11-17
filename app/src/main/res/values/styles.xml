@@ -11,9 +11,6 @@
         Aplicacion de estilos base para customizar nuestra aplicacion por defecto
 -->
 
-
-
-
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -26,11 +23,10 @@
 
 
     <style name="custom_button1" parent="AppTheme">
-        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:text">Custom</item>
-        <item name="android:layout_weight">0.5</item>
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:layout_weight">0.2</item>
         <item name="android:inputType">textShortMessage</item>
     </style>
 
