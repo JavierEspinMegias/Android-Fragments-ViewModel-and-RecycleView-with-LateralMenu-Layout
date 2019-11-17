@@ -110,11 +110,12 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
 
 
         int newColor = getRandomColor();
+        viewHolder.deleteUser.setTextColor(newColor);
+
         if (isColorDark(newColor)){
-            viewHolder.deleteUser.setTextColor(newColor);
             viewHolder.iconLetter.setTextColor(viewHolder.itemView.getContext().getColor(R.color.colorAccent));
         }else{
-            viewHolder.deleteUser.setTextColor(viewHolder.deleteUser.getContext().getColor(R.color.colorPrimaryDark));
+//            viewHolder.deleteUser.setBackgroundColor(viewHolder.deleteUser.getContext().getColor(R.color.colorPrimaryDark));
         }
 
 

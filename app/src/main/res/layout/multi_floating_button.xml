@@ -20,7 +20,7 @@
         android:visibility="invisible"
         app:backgroundTint="#ffffff"
         app:pressedTranslationZ="12dp"
-        app:srcCompat="@drawable/ic_menu_share" />
+        app:srcCompat="@drawable/ic_home" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -39,7 +39,7 @@
         android:visibility="invisible"
         app:backgroundTint="#ffffff"
         app:pressedTranslationZ="12dp"
-        app:srcCompat="@drawable/ic_menu_share" />
+        app:srcCompat="@drawable/ic_back" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -58,7 +58,10 @@
         android:visibility="invisible"
         app:backgroundTint="#ffffff"
         app:pressedTranslationZ="12dp"
-        app:srcCompat="@drawable/ic_menu_send" />
+        app:srcCompat="@drawable/ic_go" />
+
+
+    
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -76,6 +79,6 @@
         android:visibility="visible"
         android:backgroundTint="@color/colorAccent"
         app:pressedTranslationZ="12dp"
-        app:srcCompat="@drawable/ic_menu_send"/>
+        app:srcCompat="@drawable/ic_enter"/>
 
 </RelativeLayout>
