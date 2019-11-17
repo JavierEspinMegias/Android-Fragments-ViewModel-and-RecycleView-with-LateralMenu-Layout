@@ -44,12 +44,11 @@ import static android.graphics.Color.convert;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    private View root;
+
     private ArrayList<AppUser> users = new ArrayList<AppUser>();
     private UserCardAdapter adapter;
     private RecyclerView rvUsers;
-    private View root;
-    private AppUser user;
-
     private DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
 
 
