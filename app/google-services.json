@@ -1,0 +1,171 @@
+{
+  "project_info": {
+    "project_number": "312981741445",
+    "firebase_url": "https://videoclub-47939.firebaseio.com",
+    "project_id": "videoclub-47939",
+    "storage_bucket": "videoclub-47939.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312981741445:android:16c405996955a450372eec",
+        "android_client_info": {
+          "package_name": "com.android.lateralmenuexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312981741445-gljean8ovjc45lbbrk1a9732bsk10iqg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.lateralmenuexample",
+            "certificate_hash": "a3315670e897a9de99ed9e0449479f08571e9bd6"
+          }
+        },
+        {
+          "client_id": "312981741445-i5ob3oasgqs7q7hlt36eko5705bdjnf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoRZLRrCwwvKYrRsQFlLwYJ0qu_sWfBcM"
+        },
+        {
+          "current_key": "AIzaSyDxq-a3xXn_3mpIUNX1fl5xofGtBlq52fA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312981741445-i5ob3oasgqs7q7hlt36eko5705bdjnf2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312981741445:android:7a406501688c3c27",
+        "android_client_info": {
+          "package_name": "com.example.eag.practicavideoclub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312981741445-u3c95euk6697gh4nl4r548an1na4gf2s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eag.practicavideoclub",
+            "certificate_hash": "4f051c6106e519f54ab4d187a604ca0a7fae68af"
+          }
+        },
+        {
+          "client_id": "312981741445-i5ob3oasgqs7q7hlt36eko5705bdjnf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoRZLRrCwwvKYrRsQFlLwYJ0qu_sWfBcM"
+        },
+        {
+          "current_key": "AIzaSyDxq-a3xXn_3mpIUNX1fl5xofGtBlq52fA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312981741445-i5ob3oasgqs7q7hlt36eko5705bdjnf2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312981741445:android:d4cbfb0c094c0326",
+        "android_client_info": {
+          "package_name": "com.example.tiendadecomics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312981741445-1mii0gcu4faq79ohd46fbrarqb2qdqnl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tiendadecomics",
+            "certificate_hash": "a3315670e897a9de99ed9e0449479f08571e9bd6"
+          }
+        },
+        {
+          "client_id": "312981741445-i5ob3oasgqs7q7hlt36eko5705bdjnf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoRZLRrCwwvKYrRsQFlLwYJ0qu_sWfBcM"
+        },
+        {
+          "current_key": "AIzaSyDxq-a3xXn_3mpIUNX1fl5xofGtBlq52fA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312981741445-i5ob3oasgqs7q7hlt36eko5705bdjnf2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312981741445:android:813e02b0218ee002",
+        "android_client_info": {
+          "package_name": "com.tehackeolavida.yeah.appgitana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312981741445-g3dj7ou2hhkhok8ejad4d37jp27f2k46.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tehackeolavida.yeah.appgitana",
+            "certificate_hash": "4f051c6106e519f54ab4d187a604ca0a7fae68af"
+          }
+        },
+        {
+          "client_id": "312981741445-i5ob3oasgqs7q7hlt36eko5705bdjnf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoRZLRrCwwvKYrRsQFlLwYJ0qu_sWfBcM"
+        },
+        {
+          "current_key": "AIzaSyDxq-a3xXn_3mpIUNX1fl5xofGtBlq52fA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312981741445-i5ob3oasgqs7q7hlt36eko5705bdjnf2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
