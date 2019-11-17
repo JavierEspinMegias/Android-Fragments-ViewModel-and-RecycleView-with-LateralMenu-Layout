@@ -79,7 +79,7 @@ public class HomeFragment extends Fragment {
                     rvUsers.setLayoutManager(new LinearLayoutManager(getContext()));
                     adapter =new UserCardAdapter(users, true);
                 }else{
-                    rvUsers.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+                  rvUsers.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
                     adapter =new UserCardAdapter(users, false);
                 }
                 rvUsers.setAdapter(adapter);

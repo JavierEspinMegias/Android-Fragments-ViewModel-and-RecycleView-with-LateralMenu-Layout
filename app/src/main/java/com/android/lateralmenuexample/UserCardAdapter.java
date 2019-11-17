@@ -106,45 +106,61 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
                 notifyItemRangeChanged(0, users.size());
             }
         });
+
+
+
+        int newColor = getRandomColor();
+        if (isColorDark(newColor)){
+            viewHolder.deleteUser.setTextColor(newColor);
+            viewHolder.iconLetter.setTextColor(viewHolder.itemView.getContext().getColor(R.color.colorAccent));
+        }else{
+            viewHolder.deleteUser.setTextColor(viewHolder.deleteUser.getContext().getColor(R.color.colorPrimaryDark));
+        }
+
+
+
         if (isIcon){
             user.setPhoto(null);
             viewHolder.iconLetter.setVisibility(View.VISIBLE);
-            viewHolder.iconLetter.setText(""+user.name.charAt(0));
-
-            
-            Random rnd = new Random();
-            int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+            viewHolder.imageUser.setVisibility(View.GONE);
             Drawable buttonDrawable = viewHolder.iconLetter.getBackground();
             buttonDrawable = DrawableCompat.wrap(buttonDrawable);
-            DrawableCompat.setTint(buttonDrawable, color);
+            DrawableCompat.setTint(buttonDrawable, newColor);
             viewHolder.iconLetter.setBackground(buttonDrawable);
 
+            viewHolder.iconLetter.setText(""+user.name.charAt(0));
 
             viewHolder.layoutOrientation.setOrientation(LinearLayout.HORIZONTAL);
         }else {
+            viewHolder.imageUser.setVisibility(View.VISIBLE);
             viewHolder.layoutOrientation.setOrientation(LinearLayout.VERTICAL);
-            viewHolder.iconLetter.setVisibility(View.INVISIBLE);
-//            if (viewHolder.imageUser==null){
-                myStorageRef.child("productos").child(user.getId()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        user.setPhoto(uri);
-                        Glide.with(viewHolder.imageUser.getContext()).load(users.get(position).getPhoto()).into(viewHolder.imageUser);
-                    }
-                });
-//            }
+            viewHolder.iconLetter.setVisibility(View.GONE);
+
+            myStorageRef.child("productos").child(user.getId()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    user.setPhoto(uri);
+                    Glide.with(viewHolder.imageUser.getContext().getApplicationContext()).load(users.get(position).getPhoto()).into(viewHolder.imageUser);
+                }
+            });
         }
 
     }
 
 
-    public String getRandomColor() {
-        String letters = "0123456789ABCDEF";
-        String color = "#";
-        for (int i = 0; i < 6; i++) {
-            color += letters.charAt((int)Math.floor(Math.random() * 16));
-        }
+    public int getRandomColor() {
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
         return color;
+    }
+
+    public boolean isColorDark(int color){
+        double darkness = 1-(0.299*Color.red(color) + 0.587*Color.green(color) + 0.114*Color.blue(color))/255;
+        if(darkness<0.5){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     //Debemos sobrecargar getItemCount que devuelve el número de elementos que habrá en la vista
