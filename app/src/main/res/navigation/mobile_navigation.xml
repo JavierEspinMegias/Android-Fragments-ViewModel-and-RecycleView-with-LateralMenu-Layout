@@ -9,7 +9,8 @@
         android:id="@+id/nav_home"
         android:name="com.android.lateralmenuexample.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -40,4 +41,10 @@
         android:name="com.android.lateralmenuexample.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.android.lateralmenuexample.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/settings_fragment" />
 </navigation>
