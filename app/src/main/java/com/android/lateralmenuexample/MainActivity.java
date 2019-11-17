@@ -1,6 +1,9 @@
 package com.android.lateralmenuexample;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -60,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         fab1_mail = findViewById(R.id.fab1);
         fab2_share = findViewById(R.id.fab2);
         fab_example = findViewById(R.id.fab3);
+
+
 
         fab_close = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
         fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
