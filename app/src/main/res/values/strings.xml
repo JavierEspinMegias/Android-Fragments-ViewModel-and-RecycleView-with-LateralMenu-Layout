@@ -18,4 +18,5 @@
     <string name="style1">Style1</string>
     <string name="style2">Style2</string>
     <string name="style3">Style3</string>
+    <string name="iconLetter">iconLetter</string>
 </resources>
