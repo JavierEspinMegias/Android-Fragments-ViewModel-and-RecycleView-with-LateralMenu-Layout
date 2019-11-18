@@ -34,19 +34,6 @@ public class HomeViewModel extends ViewModel {
 
     private DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
 
-
-
-
-
-
-
-
-
-
-
-
-    
-
     private MutableLiveData<String> mText = new MutableLiveData<>();
     private MutableLiveData<ArrayList<AppUser>> users = new MutableLiveData<>();
 

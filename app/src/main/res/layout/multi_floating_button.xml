@@ -9,16 +9,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:elevation="24dp"
+        android:elevation="24dp"
         android:layout_above="@+id/fab2"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:layout_toStartOf="@+id/fab1"
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
-        android:elevation="16dp"
         android:focusable="true"
         android:visibility="invisible"
-        app:backgroundTint="#ffffff"
+        android:backgroundTint="#C1FFFFFF"
         app:pressedTranslationZ="12dp"
         app:srcCompat="@drawable/ic_home" />
 
@@ -28,16 +28,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:elevation="24dp"
+        android:elevation="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@+id/fab"
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
-        android:elevation="16dp"
         android:focusable="true"
         android:visibility="invisible"
-        app:backgroundTint="#ffffff"
+        android:backgroundTint="#C1FFFFFF"
         app:pressedTranslationZ="12dp"
         app:srcCompat="@drawable/ic_back" />
 
@@ -47,26 +47,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:elevation="24dp"
+        android:elevation="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:layout_above="@+id/fab"
         android:layout_alignParentEnd="true"
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
-        android:elevation="16dp"
         android:focusable="true"
         android:visibility="invisible"
-        app:backgroundTint="#ffffff"
+        android:backgroundTint="#C1FFFFFF"
         app:pressedTranslationZ="12dp"
         app:srcCompat="@drawable/ic_go" />
 
 
-    
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:elevation="24dp"
+        android:elevation="24dp"
         app:backgroundTint="@android:color/transparent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
@@ -74,10 +75,9 @@
         android:layout_marginEnd="32dp"
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
-        android:elevation="16dp"
         android:focusable="true"
         android:visibility="visible"
-        android:backgroundTint="@color/colorAccent"
+        android:backgroundTint="#C1FFFFFF"
         app:pressedTranslationZ="12dp"
         app:srcCompat="@drawable/ic_enter"/>
 
