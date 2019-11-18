@@ -22,7 +22,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -33,9 +37,14 @@ import com.google.firebase.storage.StorageReference;
 import java.util.List;
 import java.util.Random;
 
+import static androidx.constraintlayout.widget.Constraints.TAG;
+
 
 //Los adaptadores heredan de RecyclerView.Adapter
 public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHolder> {
+
+
+
 
 
     private List<AppUser> users;
@@ -87,6 +96,9 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
         return viewHolder;
     }
 
+
+
+
     //Debemos sobrecargar onBindViewHolder que enlaza los datos del modelo con la vista
     @Override
     public void onBindViewHolder(final UserCardAdapter.ViewHolder viewHolder, final int position) {
@@ -118,8 +130,6 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
 //            viewHolder.deleteUser.setBackgroundColor(viewHolder.deleteUser.getContext().getColor(R.color.colorPrimaryDark));
         }
 
-
-
         if (isIcon){
             user.setPhoto(null);
             viewHolder.iconLetter.setVisibility(View.VISIBLE);
@@ -132,6 +142,7 @@ public class UserCardAdapter extends RecyclerView.Adapter<UserCardAdapter.ViewHo
             viewHolder.iconLetter.setText(""+user.name.charAt(0));
 
             viewHolder.layoutOrientation.setOrientation(LinearLayout.HORIZONTAL);
+
         }else {
             viewHolder.imageUser.setVisibility(View.VISIBLE);
             viewHolder.layoutOrientation.setOrientation(LinearLayout.VERTICAL);
